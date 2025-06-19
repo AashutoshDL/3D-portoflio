@@ -8,6 +8,7 @@ import ModelLoader from "../utils/ModelLoader";
 import Couch from "./models/Couch";
 import Shelf from "./models/Shelf";
 import Desk from "./models/Desk";
+import CustomPerspectiveCamera from "../utils/CustomPrespectiveCamera";
 
 const Scene = () => {
   return (
@@ -16,16 +17,11 @@ const Scene = () => {
       <Canvas
         style={{ width: "100vw", height: "100vh", background: "#7FBAEA" }}
         shadows={true}
-        camera={{
-          position: [11.5, 1, 6],
-          fov: 70,
-          near: 0.1,
-          far: 10000,
-        }}
       >
         <LightWithHelper />
         <OrbitControls maxPolarAngle={Math.PI / 2} />
-        <Text />
+        {/* <Text /> */}
+        <CustomPerspectiveCamera />
         <Room
           position={[-1.5, 0, -1]}
           scale={[3.5, 3, 2.5]}
@@ -41,13 +37,12 @@ const Scene = () => {
           position={[4.5, -1.45, 1.5]}
           rotation={[0, 1.87, 0]}
         />
-
-        <ModelLoader
-          src="/models/Desk.glb"
+        <Desk
           scale={[1.5, 1.5, 1.5]}
           position={[-4.5, -1.4, -3]}
           rotation={[0, 3.45, 0]}
         />
+
         <ModelLoader
           src="/models/Modern rug.glb"
           scale={[1.5, 1, 4]}

@@ -1,8 +1,8 @@
-import React, { useRef } from 'react'
-import { useGLTF } from '@react-three/drei'
+import React, { useRef } from "react";
+import { Html, useGLTF } from "@react-three/drei";
 
 export default function Shelf(props) {
-  const { nodes, materials } = useGLTF('/models/shelf.glb')
+  const { nodes, materials } = useGLTF("/models/shelf.glb");
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -11,6 +11,30 @@ export default function Shelf(props) {
         geometry={nodes.group1329329239.geometry}
         material={materials.mat20}
       />
+      {/* <Html distanceFactor={10} position={[0, 0, 0]}>
+        <button
+          style={{
+            background: "black",
+            color: "white",
+            border: "2px solid white",
+            padding: "8px",
+            borderRadius: "50%", // makes it a circle
+            fontSize: "24px",
+            boxShadow: "0 0 5px rgba(255,255,255,0.3)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            width: "60px",
+            height: "60px",
+            textAlign: "center",
+          }}
+          onClick={() => {
+            alert("Clicked on 3");
+          }}
+        >
+          3
+        </button>
+      </Html> */}
       <mesh
         castShadow
         receiveShadow
@@ -150,7 +174,7 @@ export default function Shelf(props) {
         material={materials.mat23}
       />
     </group>
-  )
+  );
 }
 
-useGLTF.preload('/models/shelf.glb')
+useGLTF.preload("/models/shelf.glb");

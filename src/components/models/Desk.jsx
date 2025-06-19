@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
-import { useGLTF } from "@react-three/drei";
+import { Html, useGLTF } from "@react-three/drei";
+
 
 export default function Desk(props) {
   const { nodes, materials } = useGLTF("/models/Desk.glb");
@@ -10,21 +11,6 @@ export default function Desk(props) {
         rotation={[-Math.PI / 2, 0, -1.61]}
         scale={20.517}
       >
-        <Html
-          position={[0, 10, 0]} // relative to the mesh
-          distanceFactor={10} // scale relative to distance from camera
-          occlude
-          style={{
-            background: "white",
-            padding: "4px 8px",
-            borderRadius: "4px",
-            fontSize: "12px",
-            fontFamily: "sans-serif",
-            pointerEvents: "none",
-          }}
-        >
-          Keyboard
-        </Html>
         <mesh
           castShadow
           receiveShadow
