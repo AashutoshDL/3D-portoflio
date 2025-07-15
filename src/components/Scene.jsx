@@ -3,7 +3,6 @@ import { Canvas } from "@react-three/fiber";
 import Room from "./models/Room";
 import LightWithHelper from "../utils/LightWithHelper";
 import HomePageOverlay from "./UI/HomePageOverlay";
-import Text from "./models/Text";
 import ModelLoader from "../utils/ModelLoader";
 import Couch from "./models/Couch";
 import Shelf from "./models/Shelf";
